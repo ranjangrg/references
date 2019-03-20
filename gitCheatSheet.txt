@@ -23,3 +23,11 @@ git reset --hard <commit id>
 
 git checkout <path>
 	Switch branches or restore working tree files. Restore the current repo in path to last commit.
+	
+Clear all commit history (permanent): (source: https://tecadmin.net/delete-commit-history-in-github/)
+	git checkout --orphan temp_branch
+	git add -A
+	git commit -am "First commit"
+	git branch -D master
+	git branch -m master
+	git push -f origin master
