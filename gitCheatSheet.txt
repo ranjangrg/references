@@ -31,3 +31,5 @@ Clear all commit history (permanent): (source: https://tecadmin.net/delete-commi
 	git branch -D master
 	git branch -m master
 	git push -f origin master
+	(optional):
+		git push --set-upstream origin master (just to push the current branch and set remote as upstream)
