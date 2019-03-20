@@ -1,0 +1,104 @@
+1.	Threads Example Code 
+	(edited from source: https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.bpxbd00/ptyield.htm)
+
+	To compile: gcc -Wall -g <fileName.c> -lpthread -o a.out
+
+	**START**
+	/* CELEBP53 */                                   
+	#define _OPEN_THREADS                                                           
+	#include <pthread.h>                                                            
+	#include <stdio.h>                                                              
+	#include <unistd.h>     
+	#include <stdlib.h>                                                        
+															
+	void *thread(void *arg) {                                                       
+
+		/* A simple loop with only puts() would allow a thread to write several       
+		lines in a row.                                                               
+		With pthread_yield(), each thread gives another thread a chance before        
+		it writes its next line */                                                    
+
+		int count = 0;
+
+		while (count < 2) {                                                               
+			fputs((char*) arg, stdout);                                                          
+			printf(".%d\n", count);   
+			pthread_yield(NULL);                                                        
+			count++;
+		}                                                                           
+	}                                                                               
+
+	int main() {                                                                        
+		pthread_t t1, t2, t3;                                                         
+
+		if (pthread_create(&t1, NULL, thread, "thread 1") != 0) {                 
+			perror("pthread_create() error");                                           
+			exit(1);                                                                    
+		}                                                                             
+
+		if (pthread_create(&t2, NULL, thread, "thread 2") != 0) {                     
+			perror("pthread_create() error");                                           
+			exit(2);                                                                    
+		}                                                                             
+
+		if (pthread_create(&t3, NULL, thread, "thread 3") != 0) {                     
+			perror("pthread_create() error");                                           
+			exit(3);                                                                    
+		}                                                                             
+
+		sleep(1);                                                                     
+
+		exit(0); /* this will tear all threads down */                                
+	}                                                                    
+	  exit(0); /* this will tear all threads down */                                
+	}                       
+	**END**
+
+2.	Echo commands in Makefile while using 'make' command
+	"When make is given the flag ‘-n’ or ‘--just-print’ it only echoes most recipes, without executing them." 
+	- source (https://www.gnu.org/software/make/manual/html_node/Echoing.html)
+
+3.	Good Resource for C compilers
+	URL: http://www.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html
+
+4.	GCC: Output dependency list
+	gcc -M <file.c>
+	gcc -MM <file.c> // Skips system headers
+	(Source: https://stackoverflow.com/questions/42308/tool-to-track-include-dependencies)
+
+5.	Random numbers
+	#include <time.h>
+	#include <stdlib.h>
+
+	srand(time(NULL));   // Initialization, should only be called once.
+	int r = rand();      // Returns a pseudo-random integer between 0 and RAND_MAX.
+	Source: https://stackoverflow.com/questions/822323/how-to-generate-a-random-int-in-c
+
+	double random_num = (double) (rand() % 175); // random number within range
+
+6.	Makefile : make:'<something>' is up to date, even though source file is modified
+	Try: touch <sourceCodeFile.c>;
+	Helps sometimes.
+	
+7.	C program to print value in exponential (scientific) format.
+	(source: https://www.includehelp.com/code-snippets/c-program-to-print-value-in-exponential-scientific-format.aspx)
+	float value=123456.456f;
+	printf("value: %f (using %%f format specifier)\n",value);
+	printf("value: %e (using %%e format specifier)\n",value);
+	>> OUTPUT:
+	value: 123456.453125 (using %f format specifier)
+	value: 1.234565e+05 (using %e format specifier)
+
+8.	Clear an Array using memset
+	int array1[100];
+	memset(array1, 0, sizeof(arr));
+	OR
+	memset(&array1[0], 0, sizeof(arr));
+	Starting from first element, all bytes 
+	
+9.	Using 'enum' to count number of enums within it
+	enum suits {clubs, diamonds, hearts, spades, NUM_SUITS};
+	// NUM_SUITS will be 4; [0,1,2,3, {4} ] i.e. 3 + 1
+	However, if
+	enum suits {clubs, diamonds, hearts = 12, spades = 107, NUM_REQUEST_TYPES};
+	// NUM_SUITS will be 108; [0,1,12,107, {108} ] i.e. 107 + 1

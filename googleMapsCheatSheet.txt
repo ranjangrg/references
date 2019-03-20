@@ -1,0 +1,73 @@
+ Google Maps API Cheat Sheet
+=============================
+
+Q.	Main method (usually named myMap)
+A.	'myCenter', 'mapCanvas', 'mapOptions', 'map' ... are declared already.
+	function myMap() {
+		myCenter = new google.maps.LatLng(52.077859, 4.306906);
+		mapCanvas = document.getElementById("googleMap");
+		mapOptions = {center: myCenter, zoom: 16};
+		map = new google.maps.Map(mapCanvas, mapOptions);
+	}
+
+Q.	Mark a place
+A.	function markPlace() {
+		var _lat = parseFloat(document.getElementById("lat-value").value);
+		var _lon = parseFloat(document.getElementById("lon-value").value);
+		var _label = document.getElementById("loc-name").value;
+		// getting values from inputs with ID _lat, _lon etc.
+		var _location = new google.maps.LatLng(_lat, _lon);
+		map.panTo(_location); // moves (and centers) the map to this location
+		var _marker = new google.maps.Marker({
+			position: _location,
+			label: _label
+		});
+		markers.push(_marker); // if you store markers in an array named '_marker'
+		_marker.setMap(map);
+	}
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+

@@ -1,0 +1,7 @@
+=====================
+| MSDOS CHEAT SHEET |
+=====================
+
+doskey ll=ls -al
+	Shorten commands
+	

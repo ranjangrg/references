@@ -1,0 +1,37 @@
+=================================
+	PHP Cheat Sheet		
+=================================
+
+Open SQL connection (PDO)
+	$servername = "localhost";
+	$username = "username";
+	$password = "password";
+	$dbname = "myDBPDO";
+	
+	try {
+	    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	} catch (PDOException $e) {
+	    echo "Connection failed: " . $e->getMessage();
+	}
+	
+	$conn = null; // Close connection
+
+Display query results
+	$qry = "SELECT ........."; // Select sql query
+	foreach ($conn->query($qry) as $row) {
+	    echo "{$row['columnName']}"; // curly brackets important; column name is the name of the table column
+	}
+
+Add 1 month (or a day etc) to a string date
+	$today = '2018-07-19';
+	$lastMonth = date ( 'Y-m-d', strtotime ($today . ' + 1 month') ); # This is a date object
+
+Grab All parameters from a URL and display them
+	print_r($_GET);
+	
+Replace characters in a string
+	$fName = 'someFile.svg';
+	substr_replace($fName, 'jpg', strlen($fName)-3, 3);
+	
+	//replaces 'someFile.svg' -> 'someFile.jpg'

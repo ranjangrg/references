@@ -1,0 +1,77 @@
+CSS Cheat Sheet
+===============
+
+Q.	Alternating color fills within a table (from w3schools.com)
+A.	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse; // Borders collapse into one instead of double lines
+		width: 100%;
+	}
+
+	td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
+Q.	
+A.	
+
