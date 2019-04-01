@@ -13,7 +13,7 @@
 	signal=cos(w);						// Convert that to a cosine wave signal
 	audiowrite(filename, signal, fs);	// Write to file 
 	
-3. Read and plot Images
+3. 	Read and plot Images
 	I = rand (100, 100); # creates a random list of values
 	OR
 	I = imread('C:\Images\Image.png')
@@ -22,3 +22,5 @@
 	imshow (I);
 	plot (col, row, "ro");	# red circles on points where intensity is above 0.99
 	hold ("off");
+
+4.	
