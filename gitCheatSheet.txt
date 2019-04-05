@@ -33,3 +33,10 @@ Clear all commit history (permanent): (source: https://tecadmin.net/delete-commi
 	git push -f origin master				// Push changes to repository
 	(optional):
 		git push --set-upstream origin master (just to push the current branch and set remote as upstream)
+		
+add alias in git-bash for Windows
+	Modify this file in admin mode:
+		../Program Files/Git/etc/profile.d/aliases.sh
+	Add line with desired alias(es) for commands
+		e.g. 
+			alias gpush='git add .; git commit -m "AUTO" .; git push;'
