@@ -329,3 +329,12 @@ See contents of a static library in C (shared library .a/.o)
 	(at terminal)
 	ar -t <libFile>
 	(lists object files)
+	
+Install *.deb packages using dpkg
+	dpkg -i {.deb package file}
+	
+Info about dpkg package
+	dpkg --info {.deb package file}
+	
+Uninstall *.deb packages using dpkg
+	dpkg --remove {name of package NOT .deb file}
