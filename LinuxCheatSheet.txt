@@ -338,3 +338,11 @@ Info about dpkg package
 	
 Uninstall *.deb packages using dpkg
 	dpkg --remove {name of package NOT .deb file}
+
+Find if a variable is empty or not
+	if [ -z "$var" ]; then 
+		# it is empty
+	else
+		# it is not empty
+	fi
+	(also: if test -z "$var"; then)
