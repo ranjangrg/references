@@ -346,3 +346,5 @@ Find if a variable is empty or not
 		# it is not empty
 	fi
 	(also: if test -z "$var"; then)
+	
+'gnuplot' plot graphs in separate windows
