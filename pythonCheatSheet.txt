@@ -99,8 +99,9 @@ A.	import pandas as pd
 Q.	Python Pandas - print all data in dataframe
 A.	print (df.to_string())
 
-Q.	
-A.	
+Q.	Print formatted strings
+A.	name = "name last"
+	print ("{0: <5}".format(name))	# 5 spaced
 
 Q.	
 A.	
