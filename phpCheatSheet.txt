@@ -42,3 +42,6 @@ Get Environment variables (e.g. Laravel.env)
 		username=manowar
 		...
 	echo $_ENV["username"];
+	echo $_SERVER["username"];
+	Better solution:
+	echo getenv("username");
