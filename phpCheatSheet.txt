@@ -35,3 +35,10 @@ Replace characters in a string
 	substr_replace($fName, 'jpg', strlen($fName)-3, 3);
 	
 	//replaces 'someFile.svg' -> 'someFile.jpg'
+	
+Get Environment variables (e.g. Laravel.env)
+	// Suppose the .env has line:
+		...
+		username=manowar
+		...
+	echo $_ENV["username"];
