@@ -9,7 +9,7 @@
 ## Commands:
 1.	g++ -c Animal.cc -o Animal.o
 2.	g++ -c Wrapper.cc -o Wrapper.o
-3.	gcc -c maincode.c -o main.o
+3.	gcc -c mainCode.c -o main.o
 4.	g++ main.o Wrapper.o Animal.o -o main.out
 
 ## Files:
