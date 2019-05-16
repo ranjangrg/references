@@ -1,12 +1,13 @@
-Steps:
+#Steps:
 
 1.	Create CPP object (using: g++ -c code.cpp -o codeCpp.o)
 2.	Create Wrapper object (using: g++ -c Wrapper.cc -o Wrapper.o)
 3.	Create C object (using: gcc -c code.c -o codeC.o)
 4.	Link C object with wrapper (using: g++ codeC.o Wrapper.o codeCpp.o -o main.out)
 
-Files:
-#Animal.cc
+#Files:
+##Animal.cc
+```
 	#include "Animal.h"
 	#include <iostream>
 
@@ -23,8 +24,9 @@ Files:
 		std::cout << "DEF\t" << def << std::endl;
 		std::cout << "SPEED\t" << spd << std::endl;
 	}
-
-#Animal.h
+```
+##Animal.h
+```
 	#ifndef __ANIMAL_H
 		#define __ANIMAL_H
 		class Animal {
@@ -35,8 +37,10 @@ Files:
 				void show();
 		};
 	#endif
+```
 
-#Wrapper.cc
+##Wrapper.cc
+```
 	#include "Animal.h"
 	#include "Wrapper.h"
 
@@ -54,8 +58,10 @@ Files:
 		}
 
 	}
+```
 
-#Wrapper.h
+##Wrapper.h
+```
 	#ifndef __WRAPPER_H
 		#define __WRAPPER_H
 
@@ -76,8 +82,10 @@ Files:
 		#endif
 
 	#endif
+```
 
 #mainCode.c
+```
 	#include "Wrapper.h"
 	#include <stdio.h>
 
@@ -89,3 +97,4 @@ Files:
 
 		return 1;
 	}
+```
