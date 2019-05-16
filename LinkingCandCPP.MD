@@ -6,7 +6,7 @@ Steps:
 4.	Link C object with wrapper (using: g++ codeC.o Wrapper.o codeCpp.o -o main.out)
 
 Files:
-Animal.cc
+#Animal.cc
 	#include "Animal.h"
 	#include <iostream>
 
@@ -24,7 +24,7 @@ Animal.cc
 		std::cout << "SPEED\t" << spd << std::endl;
 	}
 
-Animal.h
+#Animal.h
 	#ifndef __ANIMAL_H
 		#define __ANIMAL_H
 		class Animal {
@@ -36,7 +36,7 @@ Animal.h
 		};
 	#endif
 
-Wrapper.cc
+#Wrapper.cc
 	#include "Animal.h"
 	#include "Wrapper.h"
 
@@ -55,7 +55,7 @@ Wrapper.cc
 
 	}
 
-Wrapper.h
+#Wrapper.h
 	#ifndef __WRAPPER_H
 		#define __WRAPPER_H
 
@@ -77,7 +77,7 @@ Wrapper.h
 
 	#endif
 
-mainCode.c
+#mainCode.c
 	#include "Wrapper.h"
 	#include <stdio.h>
 
