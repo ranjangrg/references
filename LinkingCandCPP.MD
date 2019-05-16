@@ -5,8 +5,9 @@
 3.	Create C object (using: gcc -c code.c -o codeC.o)
 4.	Link C object with wrapper (using: g++ codeC.o Wrapper.o codeCpp.o -o main.out)
 
-# Files:
-## Animal.cc
+# Example
+## Files:
+### Animal.cc
 ```cpp
 	#include "Animal.h"
 	#include <iostream>
@@ -25,7 +26,7 @@
 		std::cout << "SPEED\t" << spd << std::endl;
 	}
 ```
-## Animal.h
+### Animal.h
 ```cpp
 	#ifndef __ANIMAL_H
 		#define __ANIMAL_H
@@ -39,7 +40,7 @@
 	#endif
 ```
 
-## Wrapper.cc
+### Wrapper.cc
 ```cpp
 	#include "Animal.h"
 	#include "Wrapper.h"
@@ -60,7 +61,7 @@
 	}
 ```
 
-## Wrapper.h
+### Wrapper.h
 ```cpp
 	#ifndef __WRAPPER_H
 		#define __WRAPPER_H
@@ -84,7 +85,7 @@
 	#endif
 ```
 
-# mainCode.c
+### mainCode.c
 ```c
 	#include "Wrapper.h"
 	#include <stdio.h>
