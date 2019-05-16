@@ -7,7 +7,7 @@
 
 # Files:
 ## Animal.cc
-```
+```cpp
 	#include "Animal.h"
 	#include <iostream>
 
@@ -26,7 +26,7 @@
 	}
 ```
 ## Animal.h
-```
+```cpp
 	#ifndef __ANIMAL_H
 		#define __ANIMAL_H
 		class Animal {
@@ -40,7 +40,7 @@
 ```
 
 ## Wrapper.cc
-```
+```cpp
 	#include "Animal.h"
 	#include "Wrapper.h"
 
@@ -61,7 +61,7 @@
 ```
 
 ## Wrapper.h
-```
+```cpp
 	#ifndef __WRAPPER_H
 		#define __WRAPPER_H
 
@@ -85,7 +85,7 @@
 ```
 
 # mainCode.c
-```
+```c
 	#include "Wrapper.h"
 	#include <stdio.h>
 
