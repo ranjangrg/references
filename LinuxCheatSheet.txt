@@ -347,4 +347,9 @@ Find if a variable is empty or not
 	fi
 	(also: if test -z "$var"; then)
 	
-'gnuplot' plot graphs in separate windows
+Copy mysql tables from one MySQL server to another
+	$ mysqldump -u root -p database_name table_name > dump.txt
+	Copy the dump file in the destination server, then run this command in destination.
+	$ mysql -u root -p database_name < dump.txt
+	Single step command:
+		$ mysqldump -u root -p database_name \| mysql -h other-host.com database_name
