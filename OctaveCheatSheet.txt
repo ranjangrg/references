@@ -23,4 +23,9 @@
 	plot (col, row, "ro");	# red circles on points where intensity is above 0.99
 	hold ("off");
 
-4.	
+4.	Read CSV files
+	data = csvread('filepath/fileName');
+	firstCol = data(:, 1);
+	secondCol = data(:, 2);
+	... etc ...
+	(if only one column in the csv, 'data' variable is an 1D-Array)
