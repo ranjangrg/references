@@ -324,6 +324,12 @@ Plot '.csv' using gnuplot
 	)
 	set datafile separator ","; plot 'log.csv' with line;
 	x-axis is first column and y-axis is the second column
+	
+Export 'gnuplot' output as File
+	source: "https://stackoverflow.com/questions/29625776/how-to-save-a-graph-through-command-line-with-gnuplot"
+		gnuplot -e "set terminal png size 400,300; set output 'xyz.png'; plot 'data.csv' using lines;"
+		OR do it through the gnuplot CLI:
+		set terminal png size 400,300; set output 'xyz.png'; plot 'data.csv' using lines;
 
 See contents of a static library in C (shared library .a/.o)
 	(at terminal)
