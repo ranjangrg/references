@@ -330,6 +330,11 @@ Export 'gnuplot' output as File
 		gnuplot -e "set terminal png size 400,300; set output 'xyz.png'; plot 'data.csv' using lines;"
 		OR do it through the gnuplot CLI:
 		set terminal png size 400,300; set output 'xyz.png'; plot 'data.csv' using lines;
+		
+Plot a binary file:
+	source: "https://stackoverflow.com/questions/38436120/plot-single-column-binary-file-with-gnuplot" 
+	within gnuplot CLI:
+		plot 'binary.file' binary format='%double' using 0:1 with lines;
 
 See contents of a static library in C (shared library .a/.o)
 	(at terminal)
