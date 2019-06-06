@@ -72,6 +72,12 @@ Find files by name
 		
 Find files with text containing some special text.
 	grep -iRl "your-text-to-find" ./
+	
+Find text(s) containing a pattern but exclude ones that match another pattern
+	Example: Search for "man-made-car" but exclude "man-made-cargo"
+	grep -iR "man-made-car" . | grep -iv "man-made-cargo"
+	// searches for pattern "man-made-car" in current directory; lists all the lines
+	// then the result is piped to another grep which excludes lines that match with "man-made-cargo"
 
 Type Special Characters like copyright, degree etc.
 	Linux (Ubuntu test): (CTRL + SHIFT + U) then the four digit unicode 
