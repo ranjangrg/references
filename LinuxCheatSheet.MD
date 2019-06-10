@@ -216,6 +216,7 @@
 	od -A x -t x1z -v <fileName>
 	
 ### Batch Downsample FLAC files using ffmpeg
+```bash
 	#!/bin/sh
 	# requires: ffmpeg
 	for f in *.flac;
@@ -223,9 +224,11 @@
 	echo "Processing $f"
 	ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.flac}-16.flac"	# downsampling to 48Khz and 16bit, renamed with -16 added as suffix
 	done
+```
 	(source: https://stackoverflow.com/a/50867944)
 	
 ### Bash scripting: create directories using Filenames (without the extensions)
+```bash
 	#!/bin/sh
 	for f in *.flac;
 	do
@@ -246,6 +249,7 @@
 	MaryJane.mp.sj
 	root@linux:$ echo ${f%%.mp.sj}
 	MaryJane
+```
 
 ### exFAT drives mounting error solution
 	sudo apt-get install exfat-fuse exfat-utils
@@ -359,16 +363,22 @@ Split audio into chunks at certain intervals (using ffmpeg)
 	dpkg --remove {name of package NOT .deb file}
 
 ### Find if a variable is empty or not
+```bash
 	if [ -z "$var" ]; then 
 		# it is empty
 	else
 		# it is not empty
 	fi
 	(also: if test -z "$var"; then)
+```
 	
 ### Copy mysql tables from one MySQL server to another
+```bash
 	$ mysqldump -u root -p database_name table_name > dump.txt
 	Copy the dump file in the destination server, then run this command in destination.
 	$ mysql -u root -p database_name < dump.txt
+```
 	Single step command:
-		$ mysqldump -u root -p database_name \| mysql -h other-host.com database_name
+```bash
+	$ mysqldump -u root -p database_name \| mysql -h other-host.com database_name
+```
