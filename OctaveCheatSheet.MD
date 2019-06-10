@@ -8,10 +8,10 @@ csvwrite("C:\\samples.csv", y);		// create a basic CSV file in C:
 ## Create soundfile (e.g. ogg file)
 ```matlab
 filename='cosine.ogg';
-fs=44100;							// Frequency (Samples Hz)
-t=0:1/fs:10;						// 1/fs is the increment; 0, 1/fs, 2/fs, ... , 10
-w=2*pi*440*t;						// w = Omega i.e. 2.pi.f.t
-signal=cos(w);						// Convert that to a cosine wave signal
+fs=44100;				// Frequency (Samples Hz)
+t=0:1/fs:10;				// 1/fs is the increment; 0, 1/fs, 2/fs, ... , 10
+w=2*pi*440*t;				// w = Omega i.e. 2.pi.f.t
+signal=cos(w);				// Convert that to a cosine wave signal
 audiowrite(filename, signal, fs);	// Write to file 
 ```
 	
