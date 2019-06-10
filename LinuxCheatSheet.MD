@@ -57,13 +57,13 @@ Shows the difference in between the two files. Useful for comparing csv results.
 If you have error mounting drives with exFAT filesystem.
 
 ### Install fonts via terminal
-Copy font files to /usr/local/share/fonts -> Decide truetype or opentype first
+Copy font files to ```/usr/local/share/fonts``` -> Decide truetype or opentype first
 For the fonts' directory:
-	sudo chmod 755 <nameOfDir>
+	```sudo chmod 755 <nameOfDir>```
 For the fonts' files
-	sudo chmod 644 <nameOfDir>
+	```sudo chmod 644 <nameOfDir>```
 Then rebuild the font cache by:
-	fc-cache -f -v
+	```fc-cache -f -v```
 
 ### Find files by name
 find <path> -name "*.err"
