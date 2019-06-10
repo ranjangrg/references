@@ -1,14 +1,12 @@
-=====================
-| LINUX CHEAT SHEET |
-=====================
+# LINUX CHEAT SHEET 
 
-cat myFile | less
+1. cat myFile | less
 	Pagewise result; 'q' to quit
 
-chmod u=rwx,g=rx,o=x myFile
+1. chmod u=rwx,g=rx,o=x myFile
 	Change file permissions/attrib
 
-cat myFile | grep -v 'someString'
+1. cat myFile | grep -v 'someString'
 	Show content while skipping lines containing the given string
 
 mkdir -p a/b/c
