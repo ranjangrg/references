@@ -34,14 +34,14 @@ Convert local time to Unix timestamp
 To run some command on linux that runs even when the terminal is closed.
 Useful for things like batch processing or bad connections where ssh fails.
 Some useful command options in screen:
-	* screen -ls to list all the screens currently running/available
-	* screen -r [session ID] to reattach the screen 
+* screen -ls to list all the screens currently running/available
+* screen -r [session ID] to reattach the screen 
 While inside a screen session:
-	* `Ctrl + A` -> then ? for help
-	* `Ctrl + A` -> then d to detach from screen (will not kill the session/screen)
-	* `Ctrl + A` -> then k to kill the session/screen
-	* `Ctrl + A` -> then c to create a new screen
-	* `Ctrl + A` -> then [0 to 9] to access screen windows (when we have multiple windows in screen)
+* `Ctrl + A` -> then ? for help
+* `Ctrl + A` -> then d to detach from screen (will not kill the session/screen)
+* `Ctrl + A` -> then k to kill the session/screen
+* `Ctrl + A` -> then c to create a new screen
+* `Ctrl + A` -> then [0 to 9] to access screen windows (when we have multiple windows in screen)
 
 ### sort -u myfile.csv -o myfile.csv
 The options mean:
