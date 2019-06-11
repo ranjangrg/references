@@ -18,24 +18,24 @@ Find all the empty directories
 ### ln -sf /path/to/file ./someName
 Creates symlink called 'someName' pointing to the file described in the path
 
-### rm /path/to/link
+### `rm /path/to/link`
 Removes symlink. Note: symlink is a file even though it may point to a directory. So, no path/
 
-### sftp://lxdK2/home/root
+### `sftp://lxdK2/home/root`
 Network Drive (using sftp). Safer than hard mounting a network drive. Less corruption especially from opening files at multiple editors etc.
 
-### alias customCommandName='originalCommand'
+### `alias customCommandName='originalCommand'`
 Custom command shortcuts
 
-### date -j -f "%Y-%m-%d" "2010-10-02" "+%s"
+### `date -j -f "%Y-%m-%d" "2010-10-02" "+%s"`
 Convert local time to Unix timestamp
 
 ### screen
 To run some command on linux that runs even when the terminal is closed.
 Useful for things like batch processing or bad connections where ssh fails.
 Some useful command options in screen:
-* screen -ls to list all the screens currently running/available
-* screen -r [session ID] to reattach the screen 
+* `screen -ls` to list all the screens currently running/available
+* `screen -r [session ID]` to reattach the screen 
 While inside a screen session:
 * `Ctrl + A` -> then ? for help
 * `Ctrl + A` -> then d to detach from screen (will not kill the session/screen)
