@@ -52,17 +52,20 @@ While inside a screen session:
 * `Ctrl + A` -> then c to create a new screen
 * `Ctrl + A` -> then [0 to 9] to access screen windows (when we have multiple windows in screen)
 
-### sort -u myfile.csv -o myfile.csv
+### Show unique lines of texts in file (no duplicates)
+`sort -u myfile.csv -o myfile.csv`
 The options mean:
 	-u - keep only unique lines
 	-o - output to this file instead of stdout
 You should view man sort for more information.
 The -u option for uniq will only print unique lines. In this file, all lines are duplicates so they will not be printed out.
 
-### diff <file1> <file2>
+### Show difference between two files
+`diff <file1> <file2>`
 Shows the difference in between the two files. Useful for comparing csv results.
 
-### sudo apt-get install exfat-fuse exfat-utils
+### Solve mounting error: exFAT Filesystem
+`sudo apt-get install exfat-fuse exfat-utils`
 If you have error mounting drives with exFAT filesystem.
 
 ### Install fonts via terminal
@@ -75,14 +78,14 @@ Then rebuild the font cache by:
 	```fc-cache -f -v```
 
 ### Find files by name
-find <path> -name "*.err"
+`find <path> -name "*.err"`
 
 ### Find files with text containing some special text.
-grep -iRl "your-text-to-find" ./
+`grep -iRl "your-text-to-find" ./`
 
 ### Find text(s) containing a pattern but exclude ones that match another pattern
 Example: Search for "man-made-car" but exclude "man-made-cargo"
-grep -iR "man-made-car" . | grep -iv "man-made-cargo"
+`grep -iR "man-made-car" . | grep -iv "man-made-cargo"`
 // searches for pattern "man-made-car" in current directory; lists all the lines
 // then the result is piped to another grep which excludes lines that match with "man-made-cargo"
 
