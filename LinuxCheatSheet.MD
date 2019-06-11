@@ -1,36 +1,45 @@
 # LINUX CHEAT SHEET 
 
-### cat myFile | less
+###  Print file contents (esp long ones)
+`cat myFile | less`
 Pagewise result; 'q' to quit
 
-### chmod u=rwx,g=rx,o=x myFile
-Change file permissions/attrib
+### Change file permissions/attrib
+`chmod u=rwx,g=rx,o=x myFile`
 
-### cat myFile | grep -v 'someString'
+### Show filtered content (except)
+`cat myFile | grep -v 'someString'`
 Show content while skipping lines containing the given string
 
-### mkdir -p a/b/c
+### Create nested directories
+`mkdir -p a/b/c`
 Create nested directories incl. ones that don't exist
 
-### find <path> -type d -empty
+### Find empty directories
+`find <path> -type d -empty`
 Find all the empty directories 
 
-### ln -sf /path/to/file ./someName
+### Create symlink
+`ln -sf /path/to/file ./someName`
 Creates symlink called 'someName' pointing to the file described in the path
 
-### `rm /path/to/link`
+### Remove symlink
+`rm /path/to/link`
 Removes symlink. Note: symlink is a file even though it may point to a directory. So, no path/
 
-### `sftp://lxdK2/home/root`
+### Mount using sftp
+`sftp://lxdK2/home/root`
 Network Drive (using sftp). Safer than hard mounting a network drive. Less corruption especially from opening files at multiple editors etc.
 
-### `alias customCommandName='originalCommand'`
+### Custom alias commands
+`alias customCommandName='originalCommand'`
 Custom command shortcuts
 
-### `date -j -f "%Y-%m-%d" "2010-10-02" "+%s"`
+### Convert Date to Unix timestamp
+`date -j -f "%Y-%m-%d" "2010-10-02" "+%s"`
 Convert local time to Unix timestamp
 
-### screen
+### Using `screen` command
 To run some command on linux that runs even when the terminal is closed.
 Useful for things like batch processing or bad connections where ssh fails.
 Some useful command options in screen:
