@@ -36,11 +36,8 @@ git push --set-upstream origin master 	# (just to push the current branch and se
 ```
 	
 ### add alias in git-bash for Windows
-Modify this file in admin mode:<br/>
-	`../Program Files/Git/etc/profile.d/aliases.sh`<br/>
-Add line with desired alias(es) for commands<br/>
-	e.g. <br/>
-		`alias gpush='git add .; git commit -m "AUTO" .; git push;'`
+Modify this file in admin mode:	`../Program Files/Git/etc/profile.d/aliases.sh`<br/>
+Add line with desired alias(es) for commands e.g. `alias gpush='git add .; git commit -m "AUTO" .; git push;'`
 			
 
 # SVN Cheat Sheet
