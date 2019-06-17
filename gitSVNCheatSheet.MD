@@ -13,7 +13,7 @@ Records file snapshots permanently in version history. May need to add files man
 Uploads all local branch commits to the repo/URL. May need username and password authorisation (if no globals are set).
 
 ### `git pull`
-**Update local repo to the newest commit. <br/>
+**Update local repo to the newest commit.   
 Fetch from and integrate with another repository or a local branch. Incorporates changes from a remote repository into the current branch.
 
 ### `git reset --hard <commit id>`
@@ -23,7 +23,7 @@ Changes back local repo to the given commit snapshot. Without the commit id, it 
 Switch branches or restore working tree files. Restore the current repo in path to last commit.
 	
 ### Clear all commit history (permanent): 
-(source: https://tecadmin.net/delete-commit-history-in-github/)
+(source: https://tecadmin.net/delete-commit-history-in-github/)  
 ```bash
 git checkout --orphan temp_branch		# Create orphan branch
 git add -A								# Add files to branch
