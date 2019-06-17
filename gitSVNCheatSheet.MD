@@ -41,7 +41,8 @@ Add line with desired alias(es) for commands e.g.
 ```bash
 alias gpush='git add .; 
 git commit -m "AUTO" .; 
-git push;```
+git push;
+```
 			
 
 # SVN Cheat Sheet
