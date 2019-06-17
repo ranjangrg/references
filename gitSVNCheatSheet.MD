@@ -13,7 +13,7 @@ Records file snapshots permanently in version history. May need to add files man
 Uploads all local branch commits to the repo/URL. May need username and password authorisation (if no globals are set).
 
 ### `git pull`
-**Update local repo to the newest commit.
+**Update local repo to the newest commit.  return
 Fetch from and integrate with another repository or a local branch. Incorporates changes from a remote repository into the current branch.
 
 ### `git reset --hard <commit id>`
