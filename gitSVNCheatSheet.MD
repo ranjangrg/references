@@ -43,7 +43,7 @@ Add line with desired alias(es) for commands e.g. `alias gpush='git add .; git c
 # SVN Cheat Sheet
 
 ### Ignore files from repo
-`svn propedit svn:ignore <directory path>`
-(if no editor set for editing ignore file)
-`export SVN_EDITOR=vi` (or any other editor)
-`svn ci -m "..." <directory path>`
+`svn propedit svn:ignore <directory path>`  
+(if no editor set for editing ignore file)  
+`export SVN_EDITOR=vi` (or any other editor)  
+`svn ci -m "..." <directory path>`  
