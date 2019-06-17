@@ -35,9 +35,13 @@ git push -f origin master				# Push changes to repository
 git push --set-upstream origin master 	# (just to push the current branch and set remote as upstream)
 ```
 	
-### add alias in git-bash for Windows
-Modify this file in admin mode:	`../Program Files/Git/etc/profile.d/aliases.sh`<br/>
-Add line with desired alias(es) for commands e.g. `alias gpush='git add .; git commit -m "AUTO" .; git push;'`
+### Add alias in git-bash for Windows
+Modify this file in admin mode:	 `../Program Files/Git/etc/profile.d/aliases.sh`<br/>
+Add line with desired alias(es) for commands e.g.  
+```bash
+alias gpush='git add .; 
+git commit -m "AUTO" .; 
+git push;'`
 			
 
 # SVN Cheat Sheet
