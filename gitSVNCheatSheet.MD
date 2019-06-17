@@ -6,7 +6,7 @@ Downloads a project and its entire version history.
 ### git status
 Lists all new or modified files to be committed.
 
-### git commit -m "<descriptive message>"
+### git commit -m "\<descriptive message\>"
 Records file snapshots permanently in version history. May need to add files manually using "git add [filename]" 
 
 ### git push
@@ -22,7 +22,8 @@ Changes back local repo to the given commit snapshot. Without the commit id, it 
 ### git checkout <path>
 Switch branches or restore working tree files. Restore the current repo in path to last commit.
 	
-### Clear all commit history (permanent): (source: https://tecadmin.net/delete-commit-history-in-github/)
+### Clear all commit history (permanent): 
+(source: https://tecadmin.net/delete-commit-history-in-github/)
 ```bash
 git checkout --orphan temp_branch		# Create orphan branch
 git add -A								# Add files to branch
