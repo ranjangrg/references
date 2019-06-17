@@ -13,7 +13,7 @@ Records file snapshots permanently in version history. May need to add files man
 Uploads all local branch commits to the repo/URL. May need username and password authorisation (if no globals are set).
 
 ### `git pull`
-**Update local repo to the newest commit.  
+**Update local repo to the newest commit. <br/>
 Fetch from and integrate with another repository or a local branch. Incorporates changes from a remote repository into the current branch.
 
 ### `git reset --hard <commit id>`
@@ -36,10 +36,10 @@ git push --set-upstream origin master 	# (just to push the current branch and se
 ```
 	
 ### add alias in git-bash for Windows
-Modify this file in admin mode:
-	`../Program Files/Git/etc/profile.d/aliases.sh`
-Add line with desired alias(es) for commands
-	e.g. 
+Modify this file in admin mode:<br/>
+	`../Program Files/Git/etc/profile.d/aliases.sh`<br/>
+Add line with desired alias(es) for commands<br/>
+	e.g. <br/>
 		`alias gpush='git add .; git commit -m "AUTO" .; git push;'`
 			
 
