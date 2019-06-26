@@ -1,42 +1,62 @@
 # LINUX CHEAT SHEET 
 
 ###  Print file contents (esp long ones)
-`cat myFile | less`
+```bash
+cat myFile | less
+```
 Pagewise result; 'q' to quit
 
 ### Change file permissions/attrib
-`chmod u=rwx,g=rx,o=x myFile`
+```bash
+chmod u=rwx,g=rx,o=x myFile
+```
 
 ### Show filtered content (except)
-`cat myFile | grep -v 'someString'`
+```bash
+cat myFile | grep -v 'someString'
+```
 Show content while skipping lines containing the given string
 
 ### Create nested directories
-`mkdir -p a/b/c`
+```bash
+mkdir -p a/b/c
+```
 Create nested directories incl. ones that don't exist
 
 ### Find empty directories
-`find <path> -type d -empty`
+```bash
+find <path> -type d -empty
+```
 Find all the empty directories 
 
 ### Create symlink
-`ln -sf /path/to/file ./someName`
+```bash
+ln -sf /path/to/file ./someName
+```
 Creates symlink called 'someName' pointing to the file described in the path
 
 ### Remove symlink
-`rm /path/to/link`
+```bash
+rm /path/to/link
+```
 Removes symlink. Note: symlink is a file even though it may point to a directory. So, no path/
 
 ### Mount using sftp
-`sftp://lxdK2/home/root`
+```bash
+sftp://lxdK2/home/root
+```
 Network Drive (using sftp). Safer than hard mounting a network drive. Less corruption especially from opening files at multiple editors etc.
 
 ### Custom alias commands
-`alias customCommandName='originalCommand'`
+```bash
+alias customCommandName='originalCommand'
+```
 Custom command shortcuts
 
 ### Convert Date to Unix timestamp
-`date -j -f "%Y-%m-%d" "2010-10-02" "+%s"`
+```bash
+date -j -f "%Y-%m-%d" "2010-10-02" "+%s"
+```
 Convert local time to Unix timestamp
 
 ### Using `screen` command
@@ -46,51 +66,71 @@ Some useful command options in screen:
 * `screen -ls` to list all the screens currently running/available
 * `screen -r [session ID]` to reattach the screen 
 While inside a screen session:
-* `Ctrl + A` -> then ? for help
-* `Ctrl + A` -> then d to detach from screen (will not kill the session/screen)
-* `Ctrl + A` -> then k to kill the session/screen
-* `Ctrl + A` -> then c to create a new screen
-* `Ctrl + A` -> then [0 to 9] to access screen windows (when we have multiple windows in screen)
+* `Ctrl + A` -> then `?` for help
+* `Ctrl + A` -> then `d` to detach from screen (will not kill the session/screen)
+* `Ctrl + A` -> then `k` to kill the session/screen
+* `Ctrl + A` -> then `c` to create a new screen
+* `Ctrl + A` -> then `[0 to 9]` to access screen windows (when we have multiple windows in screen)
 
 ### Show unique lines of texts in file (no duplicates)
-`sort -u myfile.csv -o myfile.csv`
+```bash
+sort -u myfile.csv -o myfile.csv
+```
 The options mean:
-	-u - keep only unique lines
-	-o - output to this file instead of stdout
+```bash
+-u - keep only unique lines
+-o - output to this file instead of stdout
+```
 You should view man sort for more information.
-The -u option for uniq will only print unique lines. In this file, all lines are duplicates so they will not be printed out.
+The `-u` option for unique will only print unique lines. In this file, all lines are duplicates so they will not be printed out.
 
 ### Show difference between two files
-`diff <file1> <file2>`
+```bash
+diff <file1> <file2>
+```
 Shows the difference in between the two files. Useful for comparing csv results.
 
 ### Solve mounting error: exFAT Filesystem
-`sudo apt-get install exfat-fuse exfat-utils`
+```bash
+sudo apt-get install exfat-fuse exfat-utils
+```
 If you have error mounting drives with exFAT filesystem.
 
 ### Install fonts via terminal
 Copy font files to ```/usr/local/share/fonts``` -> Decide truetype or opentype first
 For the fonts' directory:
-	```sudo chmod 755 <nameOfDir>```
+```bash
+sudo chmod 755 <nameOfDir>
+```
 For the fonts' files
-	```sudo chmod 644 <nameOfDir>```
+```bash
+sudo chmod 644 <nameOfDir>
+```
 Then rebuild the font cache by:
-	```fc-cache -f -v```
+```bash
+fc-cache -f -v
+```
 
 ### Find files by name
-`find <path> -name "*.err"`
+```bash
+find <path> -name "*.err"
+```
 
 ### Find files with text containing some special text.
-`grep -iRl "your-text-to-find" ./`
+```bash
+grep -iRl "your-text-to-find" ./
+```
 
 ### Find text(s) containing a pattern but exclude ones that match another pattern
 Example: Search for "man-made-car" but exclude "man-made-cargo"
-`grep -iR "man-made-car" . | grep -iv "man-made-cargo"`
+```bash
+grep -iR "man-made-car" . | grep -iv "man-made-cargo"
+```
 // searches for pattern "man-made-car" in current directory; lists all the lines
 // then the result is piped to another grep which excludes lines that match with "man-made-cargo"
 
 ### Type Special Characters like copyright, degree etc.
-Linux (Ubuntu test): (CTRL + SHIFT + U) then the four digit unicode 
+Linux (Ubuntu test): (`CTRL + SHIFT + U`) then the four digit unicode 
 
 ### Install LAMP stack 
 ```bash
@@ -129,25 +169,35 @@ CONTENT inside the phpinfo.php file:
 ```
 
 ### PHPmyadmin giving permission errors
-Possible due to version mismatch. To fix this, we can download the latest phpmyadmin files and manually put the files in /usr/share/phpmyadmin/
+Possible due to version mismatch. To fix this, we can download the latest phpmyadmin files and manually put the files in `/usr/share/phpmyadmin/`
 
 ### Kill a 'SCREEN' session in screen
 ```bash
 $ screen -ls
 $ screen -X -S [session # you want to kill] quit
 ```
-Ctrl + A -> 'K' to kill 'D' to detach while inside the screen
+`Ctrl + A` -> `K` to kill `D` to detach while inside the screen
 
 ### Change ownership recursively
-```sudo chown username:groupname files```
+```bash
+sudo chown username:groupname files
+```
 
 ### Read and write data across network connection
-On dst:	```nc -l <port-number>```
-On src:	```nc <dst> <port-number>```
+On dst:	
+```bash
+nc -l <port-number>
+```
+On src:	
+```bash
+nc <dst> <port-number>
+```
 Port-numbers have to match
 
 ### Check if a port is open
-```netstat -an | grep PORTNUMBER | grep -i listen```
+```bash
+netstat -an | grep PORTNUMBER | grep -i listen
+```
 If empty output, the port is not listening to anything atm.
 
 ### Function in a BASH shell
@@ -165,83 +215,113 @@ echo $?
 
 ### Batch rename files
 Rename all files numerically:
-```i=0; for f in *; do mv "$f" "$i.JPG"; let "i++" ; done```
+```bash
+i=0; for f in *; do mv "$f" "$i.JPG"; let "i++" ; done
+```
 Rename all .jpg files to .img
-```for f in *.jpg; do mv $f ${f%jpg}img; done```
+```bash
+for f in *.jpg; do mv $f ${f%jpg}img; done
+```
 
 ### Truncate characters from a string variable
 ```bash
 $name=file2uselessparts.fn;
 echo ${name%useless*}; 
-output: file2
-# note: searches from the end of string
 ```
+output: file2
+> note: searches from the end of string
 
-### Substitue characters in a string variable
+### Substitute characters in a string variable
 ```bash
 $name=file2uselessparts.fn;
 echo ${name/useless/useful}; 
-output: file2usefulpart.fn
-# note: searches from the start of string, and only replaces ONCE
 ```
+output: file2usefulpart.fn
+\# note: searches from the start of string, and only replaces ONCE
+
 
 ### Play WAV files via terminal
-```aplay <filename/executable sound generator>```
+```bash
+aplay <filename/executable sound generator>
+```
 
 ### Create symlink to directory
-```ln -s /path/directoryA/ linkName```
+```bash
+ln -s /path/directoryA/ linkName
+```
 
 ### Copy directory (preserving attributes and recursive)
 (source: https://www.cyberciti.biz/faq/copy-folder-linux-command-line/)
+```bash
 cp -avr /home/Downloads/cpp /home/Desktop/cpp-copy
+```
 where,
 -a : Preserve the specified attributes such as directory an file mode, ownership, timestamps, if possible additional attributes: context, links, xattr, all.
 -v : Explain what is being done.
 -r : Copy directories recursively.
 
 ### Show SVN difference between working copy and repository
+```bash
 svn diff -r head
+```
+```bash
 svn diff -r head --diff-cmd meld
+```
 source: kdopen @ https://stackoverflow.com/questions/4926896/svn-how-to-compare-working-copy-with-repository-revision
 
 ### Change IP Address of a container(or machine)
+```bash
 ifconfig // show list of network interfaces
 ifconfig eth0 down;	ifconfig eth0 up; // restart if needed; not required
 ifconfig eth0 172.0.2.123 // Assigning static IP to eth0: 172.0.2.123
+```
 
 ### Remove first 8 characters from each line in a file
+```bash
 sed 's/^........//' <fileName>
 sed 's/^........//' <fileName> > otherFile // pipe the output to a new file
-
+```
 Alternatively, 
+```bash
 cut -c9-
+```
 
 ### Remove last 4 characters from each line in a file
+```bash
 sed 's/....$//' <fileName>
+```
 
 ### Overwrite local changes to HEAD of repository
+```bash
 svn revert -R <path>; // -R means recursive
+```
 Note: Overwrites! so caution
 
 ### Change Directory to previous location (history wise)
-cd - 
-OR 
-cd $OLDPWD
+```cd - ``` OR ```cd $OLDPWD```
 
 ### Covert string to Hex-number via command line
+```bash
 echo -n "Hello" | od -A n -t x1
+```
 (source: https://stackoverflow.com/questions/6791798/convert-string-to-hexadecimal-on-command-line/6791875)
 
 ### Covert hex string in to ASCII via command line
-Method 1:
+1. Method 1:
+```bash
 for c in `cat test_file.txt`; do printf "\x$c"; done;
+```
 (source: https://stackoverflow.com/questions/13160309/conversion-hex-string-into-ascii-in-bash-command-line)
-Method 2:
+2. Method 2:
+```bash
 cat file.txt | od -An -vtx2
+```
 (source: https://unix.stackexchange.com/questions/268514/how-do-i-print-the-numerical-ascii-values-of-each-character-in-a-file/268515)
 
 ### HexDump of a file (very useful, shows ASCII + hex values)
-```od -A x -t x1z -v <fileName>```
+```bash
+od -A x -t x1z -v <fileName>
+```
 
 ### Batch Downsample FLAC files using ffmpeg
 ```bash
@@ -280,7 +360,9 @@ MaryJane
 ```
 
 ### exFAT drives mounting error solution
+```bash
 sudo apt-get install exfat-fuse exfat-utils
+```
 
 ### Bash scripting: Force Y/n on commands
 ```bash
@@ -312,7 +394,9 @@ done
 ```
 
 ### Empty contents of a 'regular' file in Terminal
-```> fileName.fil```
+```bash
+> fileName.fil
+```
 
 ### Arithmetic operations in shell script:
 ```bash
@@ -364,33 +448,49 @@ done
 7,78
 ...
 )
+```bash
 set datafile separator ","; plot 'log.csv' with line;
+```
 x-axis is first column and y-axis is the second column
 
 ### Export 'gnuplot' output as File
 source: "https://stackoverflow.com/questions/29625776/how-to-save-a-graph-through-command-line-with-gnuplot"
-```gnuplot -e "set terminal png size 400,300; set output 'xyz.png'; plot 'data.csv' using lines;"```
-	OR do it through the gnuplot CLI:
-```set terminal png size 400,300; set output 'xyz.png'; plot 'data.csv' using lines;```
+```bash
+gnuplot -e "set terminal png size 400,300; set output 'xyz.png'; plot 'data.csv' using lines;"
+```
+OR do it through the gnuplot CLI:
+```bash
+set terminal png size 400,300; set output 'xyz.png'; plot 'data.csv' using lines;
+```
 
 ### Plot a binary file:
 source: "https://stackoverflow.com/questions/38436120/plot-single-column-binary-file-with-gnuplot" 
 within gnuplot CLI:
-```plot 'binary.file' binary format='%double' using 0:1 with lines;```
+```gnuplot
+plot 'binary.file' binary format='%double' using 0:1 with lines;
+```
 
 ### See contents of a static library in C (shared library .a/.o)
 (at terminal)
-```ar -t <libFile>```
+​```bash
+ar -t <libFile>
+```
 (lists object files)
 
 ### Install *.deb packages using dpkg
+​```bash
 dpkg -i {.deb package file}
+```
 
 ### Info about dpkg package
+```bash
 dpkg --info {.deb package file}
+```
 
 ### Uninstall *.deb packages using dpkg
+```bash
 dpkg --remove {name of package NOT .deb file}
+```
 
 ### Find if a variable is empty or not
 ```bash
@@ -405,10 +505,20 @@ fi
 ### Copy mysql tables from one MySQL server to another
 ```bash
 $ mysqldump -u root -p database_name table_name > dump.txt
+```
 Copy the dump file in the destination server, then run this command in destination.
+```bash
 $ mysql -u root -p database_name < dump.txt
 ```
 Single step command:
 ```bash
 $ mysqldump -u root -p database_name \| mysql -h other-host.com database_name
+```
+
+### Monitor command output periodically 
+```watch``` - execute a program periodically, showing output full screen 
+
+Example: (to monitor file contents using ```ls``` every second)
+```bash
+watch -n1 ls
 ```
