@@ -1,6 +1,2 @@
 # references
-Contains references to various commands and queries.
-Currently contains references on:
-	- Linux terminal commands	
-	- Windows DOS commands
-	- git commands
+Contains a list of files with references/Cheat Sheets for various environments/programming languages.

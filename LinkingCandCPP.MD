@@ -1,16 +1,16 @@
 # Steps:
 
-1.	Create CPP object (using: g++ -c code.cpp -o codeCpp.o)
-2.	Create Wrapper object (using: g++ -c Wrapper.cc -o Wrapper.o)
-3.	Create C object (using: gcc -c code.c -o codeC.o)
-4.	Link C object with wrapper (using: g++ codeC.o Wrapper.o codeCpp.o -o main.out)
+1.	Create CPP object (using: `g++ -c code.cpp -o codeCpp.o`)
+2.	Create Wrapper object (using: `g++ -c Wrapper.cc -o Wrapper.o`)
+3.	Create C object (using: `gcc -c code.c -o codeC.o`)
+4.	Link C object with wrapper (using: `g++ codeC.o Wrapper.o codeCpp.o -o main.out`)
 
 # Example
 ## Commands:
-1.	```g++ -c Animal.cc -o Animal.o```
-2.	```g++ -c Wrapper.cc -o Wrapper.o```
-3.	```gcc -c mainCode.c -o main.o```
-4.	```g++ main.o Wrapper.o Animal.o -o main.out```
+1. ```g++ -c Animal.cc -o Animal.o```
+2. ```g++ -c Wrapper.cc -o Wrapper.o```
+3. ```gcc -c mainCode.c -o main.o```
+4. ```g++ main.o Wrapper.o Animal.o -o main.out```
 
 ## Files:
 ### Animal.cc
@@ -59,7 +59,7 @@ extern "C" {
 	void showAnimal(Animal* animal) {
 		animal->show();
 	}
-
+	
 	void deleteAnimal(Animal* animal) {
 		delete animal;
 	}
@@ -67,22 +67,22 @@ extern "C" {
 ```
 
 ### Wrapper.h
-```cpp
+```c
 #ifndef __WRAPPER_H
 	#define __WRAPPER_H
 
 	#ifdef __cplusplus
 		extern "C" {
 	#endif
-
+	
 	typedef struct Animal Animal;
-
+	
 	Animal* newAnimal();
-
+	
 	void showAnimal(Animal* animal);
-
+	
 	void deleteAnimal(Animal* animal);
-
+	
 	#ifdef __cplusplus
 		}
 	#endif
@@ -91,7 +91,7 @@ extern "C" {
 ```
 
 ### mainCode.c
-```c
+```c++
 #include "Wrapper.h"
 #include <stdio.h>
 
@@ -100,7 +100,7 @@ int main() {
 	showAnimal(dog);
 
 	deleteAnimal(dog);
-
+	
 	return 1;
 }
 ```

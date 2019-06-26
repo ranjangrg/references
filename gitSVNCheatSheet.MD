@@ -7,10 +7,10 @@ Downloads a project and its entire version history.
 Lists all new or modified files to be committed.
 
 ### `git commit -m "\<descriptive message\>"`
-Records file snapshots permanently in version history. May need to add files manually using "git add [filename]" 
+Records file snapshots permanently in version history. May need to add files manually using "`git add [filename]`" 
 
 ### `git push`
-Uploads all local branch commits to the repo/URL. May need username and password authorisation (if no globals are set).
+Uploads all local branch commits to the repo/URL. May need username and password authorization (if no globals are set).
 
 ### `git pull`
 **Update local repo to the newest commit.   
@@ -34,7 +34,7 @@ git push -f origin master				# Push changes to repository
 #(optional):
 git push --set-upstream origin master 	# (just to push the current branch and set remote as upstream)
 ```
-	
+
 ### Add alias in git-bash for Windows
 Modify this file in admin mode:	 `../Program Files/Git/etc/profile.d/aliases.sh`<br/>
 Add line with desired alias(es) for commands e.g.  
@@ -43,12 +43,17 @@ alias gpush='git add .;
 git commit -m "AUTO" .; 
 git push;
 ```
-			
+
 
 # SVN Cheat Sheet
 
 ### Ignore files from repo
-`svn propedit svn:ignore <directory path>`  
+```bash
+svn propedit svn:ignore <directory path>
+```
 (if no editor set for editing ignore file)  
-`export SVN_EDITOR=vi` (or any other editor)  
-`svn ci -m "..." <directory path>`  
+```bash
+export SVN_EDITOR=vi #(or any other editor)  
+svn ci -m "..." <directory path>
+```
+
