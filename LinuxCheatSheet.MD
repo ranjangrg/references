@@ -4,9 +4,9 @@
 ```bash
 cat myFile | less
 ```
-Pagewise result; 'q' to quit
+Page wise result; '`q`' to quit
 
-### Change file permissions/attrib
+### Change file permissions/attributes
 ```bash
 chmod u=rwx,g=rx,o=x myFile
 ```
@@ -33,13 +33,15 @@ Find all the empty directories
 ```bash
 ln -sf /path/to/file ./someName
 ```
-Creates symlink called 'someName' pointing to the file described in the path
+Creates symlink called '`someName`' pointing to the file described in the path
 
 ### Remove symlink
 ```bash
 rm /path/to/link
 ```
-Removes symlink. Note: symlink is a file even though it may point to a directory. So, no path/
+Removes symlink. 
+
+> Note: symlink is a file even though it may point to a directory. So, no path/
 
 ### Mount using sftp
 ```bash
@@ -192,7 +194,7 @@ On src:
 ```bash
 nc <dst> <port-number>
 ```
-Port-numbers have to match
+> Port-numbers have to match
 
 ### Check if a port is open
 ```bash
@@ -237,7 +239,8 @@ $name=file2uselessparts.fn;
 echo ${name/useless/useful}; 
 ```
 output: file2usefulpart.fn
-\# note: searches from the start of string, and only replaces ONCE
+
+> note: searches from the start of string, and only replaces ONCE
 
 
 ### Play WAV files via terminal
@@ -251,7 +254,8 @@ ln -s /path/directoryA/ linkName
 ```
 
 ### Copy directory (preserving attributes and recursive)
-(source: https://www.cyberciti.biz/faq/copy-folder-linux-command-line/)
+> (source: https://www.cyberciti.biz/faq/copy-folder-linux-command-line/)
+
 ```bash
 cp -avr /home/Downloads/cpp /home/Desktop/cpp-copy
 ```
@@ -267,7 +271,7 @@ svn diff -r head
 ```bash
 svn diff -r head --diff-cmd meld
 ```
-source: kdopen @ https://stackoverflow.com/questions/4926896/svn-how-to-compare-working-copy-with-repository-revision
+> source: kdopen @ https://stackoverflow.com/questions/4926896/svn-how-to-compare-working-copy-with-repository-revision
 
 ### Change IP Address of a container(or machine)
 ```bash
@@ -295,7 +299,7 @@ sed 's/....$//' <fileName>
 ```bash
 svn revert -R <path>; // -R means recursive
 ```
-Note: Overwrites! so caution
+> Note: Overwrites! so caution
 
 ### Change Directory to previous location (history wise)
 ```cd - ``` OR ```cd $OLDPWD```
@@ -333,7 +337,7 @@ echo "Processing $f"
 ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.flac}-16.flac"	# downsampling to 48Khz and 16bit, renamed with -16 added as suffix
 done
 ```
-(source: https://stackoverflow.com/a/50867944)
+> (source: https://stackoverflow.com/a/50867944)
 
 ### Bash scripting: create directories using Filenames (without the extensions)
 ```bash
@@ -466,19 +470,20 @@ set terminal png size 400,300; set output 'xyz.png'; plot 'data.csv' using lines
 ### Plot a binary file:
 source: "https://stackoverflow.com/questions/38436120/plot-single-column-binary-file-with-gnuplot" 
 within gnuplot CLI:
-```gnuplot
+```bash
+gnuplot
 plot 'binary.file' binary format='%double' using 0:1 with lines;
 ```
 
 ### See contents of a static library in C (shared library .a/.o)
 (at terminal)
-​```bash
+```bash
 ar -t <libFile>
 ```
 (lists object files)
 
 ### Install *.deb packages using dpkg
-​```bash
+```bash
 dpkg -i {.deb package file}
 ```
 

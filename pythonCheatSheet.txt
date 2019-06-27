@@ -103,8 +103,8 @@ Q.	Print formatted strings
 A.	name = "name last"
 	print ("{0: <5}".format(name))	# 5 spaced
 
-Q.	
-A.	
+Q.	If pip install fails at "... failed building wheel ..."
+A.	pip install <package-name> --no-cache-dir
 
 Q.	
 A.	
