@@ -1,0 +1,6 @@
+Put Marker on map
+L = Leaflter object
+map = mpa object
+L.marker([51.885441, 4.567138]).addTo(map)
+  .bindPopup('This is my first marker!')
+  .openPopup();
