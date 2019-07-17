@@ -130,3 +130,8 @@ Remove an element in an Array by value
 
 Swap variables
 	($first, $second) = ($second, $first);
+	
+Find if a string contains text (using patterns)
+	if ($string =~ m/pattern/) {
+		print "'$string' matches the pattern\n";       
+	}
