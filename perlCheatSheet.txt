@@ -137,3 +137,7 @@ Find if a string contains text (using patterns)
 	if ($string =~ m/pattern/) {
 		print "'$string' matches the pattern\n";       
 	}
+	
+Remove first 4 characters in a string
+	my $str = "123456";
+	print substr($str, 4);
