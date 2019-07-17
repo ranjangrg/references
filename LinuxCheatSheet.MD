@@ -527,3 +527,10 @@ Example: (to monitor file contents using ```ls``` every second)
 ```bash
 watch -n1 ls
 ```
+
+### (DEBIAN) Change time-zone (using `dpkg`)
+Old way: Edit `/etc/timezone`
+Preferable:
+```bash
+dpkg-reconfigure tzdata
+```
