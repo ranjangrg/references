@@ -52,6 +52,8 @@ Using packages from local pm files
 			disp(); 
 	Careful with matching sub names!!! e.g. if you have sub names that are common in multiple packages.
 
+Delete entry in a hash
+	delete($hash{$key});
 
 Renaming a Hash Key
 	$hash{$new} = delete $hash{$old};
