@@ -1,0 +1,5 @@
+Creating a config file
+doxygen -g <config-file> # creates a default config file in current directory
+
+Run config file
+doxygen <config-file>	# creates documentation based on settings set in config file
