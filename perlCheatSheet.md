@@ -54,7 +54,7 @@ package file:
 ```perl
 use strict;
 sub disp() {
-print "\nInside the package now\n";
+	print "\nInside the package now\n";
 }
 1;
 ```
@@ -110,7 +110,7 @@ my $rounded = sprintf("%.3f", $number);
 
 # Find where PERL modules are installed
 At terminal type:
-```perl
+```bash
 perl -E "say for @INC"
 ```
 
@@ -156,12 +156,13 @@ return @_;
 2. `test(1)`	0
 3. `test(1,1)`	1
 4. `test(1,1,1)`	2
-First shift takes 1 argument.
+>First shift takes 1 argument.
 
 # Remove an element in an Array by value
 ```perl
 # Creating a list of dimensions without 'dim_date'
-my @dim_list_no_date =  map( $_->{name} , @{$columns->{dimensions}}); #['dim_month', 'dim_date' , 'dim_id', 'dim_laeq']
+my @dim_list_no_date =  map( $_->{name} , @{$columns->{dimensions}}); 
+#['dim_month', 'dim_date' , 'dim_id', 'dim_laeq']
 my $index = 0;
 $index++ until $dim_list_no_date[$index] eq "dim_date";
 splice (@dim_list_no_date, $index, 1);
