@@ -37,8 +37,8 @@ $name\n
 And then blah blah
 ENDOFSTORY
 ```
-	`$name\n` will be stored as `$name\n` with `ENDOFSTORY`.
-	`AName` followed by new line will be stored if `ENDOFSTORY`.
+`$name\n` will be stored as `$name\n` with `ENDOFSTORY`.
+`AName` followed by new line will be stored if `ENDOFSTORY`.
 
 # Print the statement prepared for SQL
 ```perl
