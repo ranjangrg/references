@@ -9,7 +9,9 @@ Since 'tiger' can't be squared i.e. 'tiger' * 'tiger', alternate value (after `|
 
 # Multi line comments
 ```perl
-=begin comment .... =cut
+=begin comment 
+.... 
+=cut
 ```
 
 # Single quote VS Double quote
