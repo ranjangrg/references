@@ -1,7 +1,7 @@
 # Python Cheat Sheet
 
 ##	"This is a line".rstrip("/n")
-Ignores '/n' at the end of the string. If no arg given, ignores all whitespace characters. Similarly, lstrip ignores whitespace towards left of the string. Use strip to ignore all whitespace char all around.
+Ignores `/n` at the end of the string. If no arg given, ignores all whitespace characters. Similarly, `lstrip` ignores whitespace towards left of the string. Use `strip` to ignore all whitespace char all around.
 
 ## Read CSV file
 ```python
@@ -17,8 +17,8 @@ with open('file.csv','rb') as csvfile:
 ## List comprehension
 ```python
 S = [x**2 for x in range(10)]	#S = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-	V = [2**i for i in range(13)]	#V = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
-	M = [x for x in S if x % 2 == 0] #M = [0, 4, 16, 36, 64]
+V = [2**i for i in range(13)]	#V = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
+M = [x for x in S if x % 2 == 0] #M = [0, 4, 16, 36, 64]
 ```
 
 ## Sort a list containing tuples
@@ -27,29 +27,29 @@ sorted_by_second = sorted(data, key=lambda tup: tup[1])
 # OR 
 data.sort(key=lambda tup: tup[1])  # sorts in place
 # Example:
-		a = [(7, 14), (7, 12), (7, 6), (7, 10), (7, 8)]
-		sorted(a, key=lambda tup: tup[1])
-			gives
-		[(7, 6), (7, 8), (7, 10), (7, 12), (7, 14)]
-		Sorts using tup[1] i.e. second element of the tuple.
+a = [(7, 14), (7, 12), (7, 6), (7, 10), (7, 8)]
+sorted(a, key=lambda tup: tup[1])
+gives
+[(7, 6), (7, 8), (7, 10), (7, 12), (7, 14)]
+Sorts using tup[1] i.e. second element of the tuple.
 ```
 
-## max(aList, key=lambda item: item[1])
+## `max(aList, key=lambda item: item[1])`
 Finds max in a list of tuples based on the second element of the pair.
 Example:
-	```python
-    aList = [(100,1), (1,2)] then
-    max(aList, key=lambda item: item[1]) gives (1,2)
-    ```
+```python
+aList = [(100,1), (1,2)] then
+max(aList, key=lambda item: item[1]) gives (1,2)
+```
 
 ## Retreive files from http
 ```python
 import urllib.request
-	response = urllib.request.urlopen('http://www.example.com/')
-	html = response.read()
+response = urllib.request.urlopen('http://www.example.com/')
+html = response.read()
 
-	import urllib.request
-	urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', 'mp3.mp3')
+import urllib.request
+urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', 'mp3.mp3')
 ```
 
 ## Add third element to a tuple(/w 2 elems)
@@ -85,7 +85,7 @@ ourConfig.items('vehicle') # gives the items inside the vehicle section
 ```python
 py -m pip install <<package>>
 ```
-> Note: Sometimes the command starts with python -m ... Check which command python uses in cmd prompt or terminal. Test it by running py, python, etc; whichever works.
+> Note: Sometimes the command starts with `python -m` ... Check which command python uses in cmd prompt or terminal. Test it by running py, python, etc; whichever works.
 
 ## Log and Export all packages list.
 ```python
@@ -166,29 +166,8 @@ Steps (Use `pip` instead of `pip3` for default Python instead of Python3.x:
 ## Renaming "virtualenv" project name
 Adjust variable names within these files: (source: https://stackoverflow.com/a/44075783)
 ```python
-<environment directory>/bin/pip 		# line 1 (She bang; change path)
+<environment directory>/bin/pip 	# line 1 (She bang; change path)
 <environment directory>/bin/activate	# line 42 (VIRTUAL_ENV; change path)
 ```
-
-## 
-
-
-## 
-
-
-## 
-
-
-## 
-
-
-## 
-
-
-## 
-
-
-## 
-
 
 ## 
