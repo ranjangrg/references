@@ -1,6 +1,9 @@
 # Python Cheat Sheet
 
-##	"This is a line".rstrip("/n")
+##	Ignore characters 
+```python
+"This is a line".rstrip("/n")
+```
 Ignores `/n` at the end of the string. If no arg given, ignores all whitespace characters. Similarly, `lstrip` ignores whitespace towards left of the string. Use `strip` to ignore all whitespace char all around.
 
 ## Read CSV file
@@ -82,19 +85,19 @@ ourConfig.items('vehicle') # gives the items inside the vehicle section
 ```
 
 ## Using pip from cmd line
-```python
+```bash
 py -m pip install <<package>>
 ```
 > Note: Sometimes the command starts with `python -m` ... Check which command python uses in cmd prompt or terminal. Test it by running py, python, etc; whichever works.
 
 ## Log and Export all packages list.
-```python
+```bash
 py pip freeze > packageList.txt
 ```
 This will log all the packages installed to a file "`packageList.txt`".
 Run command below in terminal/cmd prompt to install all the packages back:
 
-```python
+```bash
 py pip install -r packageList.txt
 ```
 
@@ -121,8 +124,8 @@ print(requests.get(url, auth=(username, password)).content)
 ```
 
 ## Install PyQt for Python 3 in Linux (Ubuntu)
-```python
-sudo apt-get install qtcreator pyqt5-dev-tools
+```bash
+$ sudo apt-get install qtcreator pyqt5-dev-tools
 ```
 
 ## Python Pandas - read CSV
@@ -144,7 +147,7 @@ print ("{0: <5}".format(name))	# 5 spaced
 
 ## If pip install fails at "... failed building wheel ..."
 ```python
-pip install <package-name> --no-cache-dir
+$ pip install <package-name> --no-cache-dir
 ```
 
 ## Creating and using "virtualenv"
@@ -165,7 +168,7 @@ Steps (Use `pip` instead of `pip3` for default Python instead of Python3.x:
 
 ## Renaming "virtualenv" project name
 Adjust variable names within these files: (source: https://stackoverflow.com/a/44075783)
-```python
+```bash
 <environment directory>/bin/pip 	# line 1 (She bang; change path)
 <environment directory>/bin/activate	# line 42 (VIRTUAL_ENV; change path)
 ```
