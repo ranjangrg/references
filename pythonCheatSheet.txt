@@ -106,11 +106,26 @@ A.	name = "name last"
 Q.	If pip install fails at "... failed building wheel ..."
 A.	pip install <package-name> --no-cache-dir
 
-Q.	
-A.	
-
-Q.	
-A.	
+Q.	Creating and using "virtualenv"
+A.	Steps (Use `pip` instead of `pip3` for default Python instead of Python3.x:
+	1.	`$ pip3 install virtualenv`
+	2.	Create a dir to hold the environment and files.
+		`$ mkdir ./python_env01`
+	3.	Get in the directory created above and create environment
+		`$ cd ./python_env01`
+		`$ virtualenv new_project01`
+	4.	Activate envionment
+		`$ source new_project01/bin/activate`
+	5.	Now we are in the evnironment. Use `pip3` to install packages.
+		`$ pip3 install numpy`
+	6.	ALWAYS, deactivate once done with the environment
+		`$ deactivate`
+	note: Don't use `sudo` as it will bypass the environment altogether as `root` user
+	
+Q.	Renaming "virtualenv" project name
+A.	Adjust variable names within these files: (source: https://stackoverflow.com/a/44075783)
+		`<environment directory>/bin/pip 		# line 1 (She bang; change path)`
+		`<environment directory>/bin/activate	# line 42 (VIRTUAL_ENV; change path)`
 
 Q.	
 A.	
