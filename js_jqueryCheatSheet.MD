@@ -309,7 +309,7 @@ var dt = Date.parse(barDate); // dt = 1409522400000 (timestamp milliseconds)
 var dtObj = new Date(bardate); // creates a date object (so more date methods)
 ```
 
-### Get id of parent element (e.g. get id of <table> from <td>
+### Get id of parent element (e.g. get id of \<table> from \<td>
 ```javascript
 var parentid = currentNode.parentNode.id;
 ```
