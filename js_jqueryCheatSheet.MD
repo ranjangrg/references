@@ -1,6 +1,6 @@
-# Javascript Cheat Sheet 
+# JavaScript Cheat Sheet 
 
-###	Call js function by entering a key (instead of using buttons)
+###	Call JavaScript function by entering a key (instead of using buttons)
 ```javascript
 function allowEnterKeyToAdd() {
 	var inputAtForm = document.getElementsByClassName("submit-form");
@@ -36,7 +36,7 @@ if (event.keyCode === 13) {
 });
 ```
 
-### Add table rows via javascript (from w3schools.com)
+### Add table rows via JavaScript (from w3schools.com)
 ```javascript
 // Find a <table> element with id="myTable":
 var table = document.getElementById("myTable");
@@ -64,7 +64,7 @@ Formatting the number further (e.g. 2 decimal places):
 var num = parseFloat(document.getElementById(amtid4).innerHTML).toFixed(2);
 ```
 
-### Empty <a> link that doesn't reload page
+### Empty `<a>` link that doesn't reload page
 ```html
 <a href="#" onclick="alert(); return false;"> Link </a> 
 ```
@@ -75,7 +75,7 @@ Use html5:
 ```html
 <input type="file" id="csv-file" name="files[]"/> // name = array of files
 ```
-In Javascript:
+In JavaScript:
 1. Set a file: 
 ```javascript
 var file = document.getElementById("csv-file").files[0]; // First file from the selected files
@@ -139,7 +139,7 @@ $("input[aria-controls='dt-17063']").val(1529443675)
 ```
 
 > Source: https://stackoverflow.com/questions/45689156/set-value-to-an-aria-controls-input
-Change the selector like this.your selector target the id not the aria-controls so use with attr selector.Also Input not have `text()` property so change with `val()`
+Change the selector like this. Your selector target the id not the aria-controls so use with attr selector. Also Input not have `text()` property so change with `val()`
 
 ```javascript
 function showMessage() {
@@ -160,11 +160,11 @@ $('.event-table label input').attr('id', 'searchMod'); // Giving ID to the searc
 ```
 For an `input` element inside element with class `event-table` and within a `label` element.
 
-### Trigger a key up (as in manual key up) when onchange doesn't detect change (esp when done via command)
+### Trigger a key up (as in manual key up) when onchange doesn't detect change (esp. when done via command)
 ```javascript
 $('#elementID').keyup();
 ```
-Triggers a keyup event inside the element with ID `elementID`
+Triggers a key-up event inside the element with ID `elementID`
 
 ### Store Filter settings in DC.js
 ```javascript
@@ -178,8 +178,8 @@ directionChart.filter('Wat.'); // Selects only Wat. values
 directionChart.render(); // renders the chart again to reflect the changes
 ```
 
-### Store and aplly filters in DC.js
-In Javascript code,
+### Store and apply filters in DC.js
+In JavaScript code,
 ```javascript
 // Stores All filter settings
 var currentFilters = [];
@@ -216,11 +216,11 @@ function loadFilters() {
 ```
 
 ### Check if a div exists
-JS:
+JavaScript:
 ```javascript
 document.getElementById("elementId") returns null if it doesn't exist
 ```
-JQuery:
+jQuery:
 ```javascript
 if ($('#diff-chart').length > 0) { // do something }
 ```
@@ -247,17 +247,17 @@ map.eachLayer(function (layer) { // Looping through each layer in the map
 ```
 
 ### (jQuery) Quick tooltip
-html: (using fontawesome for this example)
+html: (using font awesome for this example)
 ```html
 <i data-toggle="tooltip" title="Content of the tooltip" class="fa fa-refresh" aria-hidden="true" onclick="javascript: renderDiffChart();"> </i> 
 ```
-javascript:
+JavaScript:
 ```javascript
 $(function() {
 	$('[data-toggle="tooltip"]').tooltip();
 }
 ```
-css: (fix tooltip width)
+CSS: (fix tooltip width)
 ```css
 div.ui-tooltip {
 	max-width: 150px;
@@ -286,7 +286,7 @@ d3.selectAll('rect').style('fill', 'black'); // Changes fill colour of every rec
 ### (D3.js) Selections API
 URL: http://d3indepth.com/selections/
 
-### (D3.js |& DC.js) Fix overlapping x-axis lables
+### (D3.js |& DC.js) Fix overlapping x-axis labels
 ```javascript
 chart.on('renderlet', function (c) {
 	// selcting x axis texts from the chart and transforming them
@@ -319,20 +319,20 @@ var grandparentid = currentNode.parentNode.parentNode.id;
 ```
 
 ### Variable values within strings
-Using \` quotes. \`something blah\` `${<varName>}`.  Example:
+Using \` quotes.  Example:
 ```javascript
 let code = "int i = 100;";
 var fileContent = `File content:\n ${code} \n End`;
 ```
 
 ### Load JSON data into table (using Bootstrap)
-First, the Bootstrap AND Jquery API must be included in the header
+First, the Bootstrap AND jQuery API must be included in the header
 ```html
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 ```
-Then in javascript (inline or external file)
+Then in JavaScript (inline or external file)
 ```javascript
 function prepareHTML(data) {
 	let html = '<table class="table table-striped table-hover table-condensed">';
@@ -369,7 +369,7 @@ $(document).ready(loadJSON);
 <div data-toggle="tooltip" title="Tooltip contents"> Something </div>
 ...
 ```
-Then via JQuery/Javascript,
+Then via jQuery/JavaScript,
 ```javascript
 $('[data-toggle="tooltip"]').tooltip();
 ```
