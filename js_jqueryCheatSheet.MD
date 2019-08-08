@@ -325,11 +325,54 @@ let code = "int i = 100;";
 var fileContent = `File content:\n ${code} \n End`;
 ```
 
-### 
+### Load JSON data into table (using Bootstrap)
+First, the Bootstrap AND Jquery API must be included in the header
+```html
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+```
+Then in javascript (inline or external file)
+```javascript
+function prepareHTML(data) {
+	let html = '<table class="table table-striped table-hover table-condensed">';
+    html += '<tr>';	
+    $.each(data[0], function(index, value){
+		html += '<th>'+index+'</th>';
+	}
+    });
+    html += '</tr>';
+     $.each(data, function(index, value){
+        html += '<tr>';
+        $.each(value, function(index2, value2){
+            html += '<td align="center">'+value2+'</td>';
+        });
+        html += '<tr>';
+     });
+     html += '</table>';
+	 return html;
+}
 
+function loadJSON() {
+	let html = '<h1 align="center"> JSON to table </h1>';
+	let data = json_data;	// json_data should contain JSON 
+    html += prepareHTML(data);
+     $('#table-div').html(html);	// 'table-div' is the ID of the div that will populate the table contents
+}
 
-### 
+$(document).ready(loadJSON);
+```
 
+### Add tooltip to div (using Bootstrap)
+```html
+...
+<div data-toggle="tooltip" title="Tooltip contents"> Something </div>
+...
+```
+Then via JQuery/Javascript,
+```javascript
+$('[data-toggle="tooltip"]').tooltip();
+```
 
 ### 
 
