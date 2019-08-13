@@ -1,6 +1,6 @@
 # SQL Cheat Sheet Reference
 
-### SHOW CREATE TABLE <table name>
+### SHOW CREATE TABLE [table-name]
 Shows the query for creating the specified table. e.g. `CREATE TABLE` ...
 
 ### Set Lat and Lon format AS LAT, LON (in sensor db)
@@ -54,82 +54,3 @@ Usage:
 SELECT testing('bobby');
 SELECT id, name, testing('bobby') FROM table1 LIMIT 4;
 ```
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
-### 
-A.
-
