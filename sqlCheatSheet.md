@@ -6,9 +6,9 @@ Shows the query for creating the specified table. e.g. `CREATE TABLE` ...
 ### Set Lat and Lon format AS LAT, LON (in sensor db)
 ```sql
 SELECT *, CONCAT(CAST(lat AS char(10)) , ',', CAST(lon AS char(10))) FROM `ov_kv6` 
-	WHERE
-		timestamp BETWEEN '2018-03-01 00:24' AND '2018-03-01 00:25' 
-		AND vehicle='4005'
+WHERE
+	timestamp BETWEEN '2018-03-01 00:24' AND '2018-03-01 00:25' 
+	AND vehicle='4005'
 ```
 ### Allow remote access	
 Change binding address to `0.0.0.0` from `127.0.0.1` i.e. from local access only to `0`.
@@ -33,9 +33,11 @@ ALTER TABLE `tableName`
 ### MonetDB: Analyze tables and columns
 ```sql
 ANALYZE schemaname [ '.' tablename [ '('columnname , ...')' ] ]
-	e.g.
-	ANALYZE sys.tablename(columnname , ...) SAMPLE 24; // only 24 samples
-	SELECT * FROM sys.statistics;
+```
+e.g.
+```sql
+ANALYZE sys.tablename(columnname , ...) SAMPLE 24; // only 24 samples
+SELECT * FROM sys.statistics;
 ```
 >source: https://www.monetdb.org/Documentation/Cookbooks/SQLrecipes/statistics
 
