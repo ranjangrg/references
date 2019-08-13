@@ -37,7 +37,7 @@ ANALYZE schemaname [ '.' tablename [ '('columnname , ...')' ] ]
 	ANALYZE sys.tablename(columnname , ...) SAMPLE 24; // only 24 samples
 	SELECT * FROM sys.statistics;
 ```
-	source: https://www.monetdb.org/Documentation/Cookbooks/SQLrecipes/statistics
+source: https://www.monetdb.org/Documentation/Cookbooks/SQLrecipes/statistics
 
 ### Monetdb TRANSACTIONS
 ```sql
