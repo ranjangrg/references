@@ -2,16 +2,18 @@
 
 ### Remove LXD properly from system
 Safety steps to follow:
-* lxc list
-* lxc delete <whatever came from list>
-* lxc image list
-* lxc image delete <whatever came from list>
-* lxc network list
-* lxc network delete <whatever came from list>
-* echo ‘{“config”: {}}’ | lxc profile edit default
-* lxc storage volume list default
-* lxc storage volume delete default <whatever came from list>
-* lxc storage delete default
+```bash
+$ lxc list
+$ lxc delete <whatever came from list>
+$ lxc image list
+$ lxc image delete <whatever came from list>
+$ lxc network list
+$ lxc network delete <whatever came from list>
+$ echo ‘{“config”: {}}’ | lxc profile edit default
+$ lxc storage volume list default
+$ lxc storage volume delete default <whatever came from list>
+$ lxc storage delete default
+```
 Effectively listing and the deleting all the objects until everything’s clean.
 > source: 'stgraber' 
 > link: https://discuss.linuxcontainers.org/t/how-to-remove-lxd-from-my-system/2336/2
@@ -33,4 +35,11 @@ If you get `Error: Failed to connect to local LXD: .... connect: Permission deni
 $ sudo usermod --append --groups lxd <username>
 ```
 >source: https://askubuntu.com/questions/1041379/lxd-init-fails-on-ubuntu-16-04-xenial-xerus#targetText=2%20Answers&targetText=Reason%20no%20such%20file%20or,%2Flxd%2Funix.socket%20.
+
+### Create a container (Image is downloaded from network)
+```bash
+$ lxc launch ubuntu:18.04 container01
+$ lxc list # check and confirm the creation of the container
+$ lxc exec container01 -- /bin/bash # to get a shell inside new container
+```
 
