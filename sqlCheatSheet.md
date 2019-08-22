@@ -56,3 +56,15 @@ Usage:
 SELECT testing('bobby');
 SELECT id, name, testing('bobby') FROM table1 LIMIT 4;
 ```
+
+### Duplicate a SQL table (with indices and data)
+To copy with indexes and triggers do these 2 queries:
+```sql
+CREATE TABLE newtable LIKE oldtable; 
+INSERT newtable SELECT * FROM oldtable;
+```
+To copy just structure and data use this one:
+```sql
+CREATE TABLE tbl_new AS SELECT * FROM tbl_old;
+```
+> source: https://stackoverflow.com/a/3280042
