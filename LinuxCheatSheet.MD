@@ -32,8 +32,14 @@ Find all the empty directories
 ### Create symlink
 ```bash
 ln -sf /path/to/file ./someName
+ln -sfn /path/to/directory ./someName
 ```
 Creates symlink called '`someName`' pointing to the file described in the path
+Options:
+* `-s`	make a symbolic link
+* `-f`	force
+* `-n`	  --no-dereference:        treat LINK_NAME as a normal file if it is a symbolic link to a directory
+
 
 ### Remove symlink
 ```bash
