@@ -540,3 +540,13 @@ Preferable:
 ```bash
 dpkg-reconfigure tzdata
 ```
+
+### Check if port is in use
+>source: https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/
+```bash
+sudo lsof -i -P -n | grep LISTEN 
+sudo netstat -tulpn | grep LISTEN
+sudo lsof -i:50000 # lookup a particular port e.g. 50000 #
+sudo nmap -sTU -O <IP-address-Here>
+```
+
