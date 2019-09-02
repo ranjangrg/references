@@ -374,8 +374,12 @@ Then via jQuery/JavaScript,
 $('[data-toggle="tooltip"]').tooltip();
 ```
 
-### 
-
+### Jinja templates: Escape single quotes (esp in JSON from Flask/Python)
+Pipe a `safe` command along with the JSON to escape single quotes.
+```javascript
+dataTable.addRows( {{ answerjson1 | safe }} );
+```
+> Maybe need to use double quotes now!?
 
 ### 
 
