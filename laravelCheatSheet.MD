@@ -19,7 +19,6 @@ composer global require "laravel/installer=~1.1"
 ```
 5. Create first test Project and activate it
 ```bash
-
 laravel new firstProject
 sudo apt install php7.2-mbstring 
 sudo apt install php7.2-xml
@@ -28,4 +27,7 @@ composer update
 php artisan key:generate
 php artisan ser # to test as a server
 ```
-
+## Laravel host website server
+```bash
+php artisan ser --host <hostIPaddr> --port <portToUse>
+```
