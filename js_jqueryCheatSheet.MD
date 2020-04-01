@@ -381,8 +381,33 @@ dataTable.addRows( {{ answerjson1 | safe }} );
 ```
 > Maybe need to use double quotes now!?
 
-### 
+### (ES5) Promise Usage & Syntax (Example)
+```javascript
+var isTransactionSuccessful = true;
 
+var allowClientToTakeCar = new Promise (
+        function (resolve, reject) {
+                if (isTransactionSuccessful) {
+                        var decision = {giveKeysToClient: true, payment: 'Successful'};
+                        resolve(decision);	// promise resolved
+                } else {
+                        var reason = new Error('Payment not yet received. See transaction.');
+                        reject(reason);		// promise rejected
+                }
+        }
+);
+
+allowClientToTakeCar
+        .then(function (fulfilled) {
+				// promise is fulfilled
+                console.log(fulfilled);
+        })
+        .catch(function (error) {
+				// promise is rejected
+                console.log(error.message);
+        });
+
+```
 
 ### 
 
