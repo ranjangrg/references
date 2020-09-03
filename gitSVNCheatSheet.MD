@@ -12,6 +12,9 @@ Records file snapshots permanently in version history. May need to add files man
 ### `git push`
 Uploads all local branch commits to the repo/URL. May need username and password authorization (if no globals are set).
 
+### `git restore <file>`
+Discards and restores the file in working directory to repo.
+
 ### `git pull`
 **Update local repo to the newest commit.   
 Fetch from and integrate with another repository or a local branch. Incorporates changes from a remote repository into the current branch.
