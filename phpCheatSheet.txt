@@ -2,6 +2,9 @@
 	PHP Cheat Sheet		
 =================================
 
+Run development server on local machine(or specify host)
+$bash: ~ % php -S <IP address/localhost>:<listening port>
+
 Open SQL connection (PDO)
 	$servername = "localhost";
 	$username = "username";
