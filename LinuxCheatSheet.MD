@@ -549,4 +549,15 @@ sudo netstat -tulpn | grep LISTEN
 sudo lsof -i:50000 # lookup a particular port e.g. 50000 #
 sudo nmap -sTU -O <IP-address-Here>
 ```
+### Run local PHP server using host IP addr and Port
+Example used on macos zsh shell with `inet` as main interface.
+```bash
+#!/bin/zsh
 
+IP_ADDR=$(ifconfig en1 | awk '$1 == "inet" {print $2}');
+PORT_USED="5000";
+
+echo "Starting pHp server at localhost:5000. $IP_ADDR";
+cd <set current directory> 
+php -S $IP_ADDR:$PORT_USED  
+```
