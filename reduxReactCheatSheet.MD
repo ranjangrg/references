@@ -232,7 +232,8 @@ store.dispatch({ type: <type> })
 ```
 > You can think of dispatching actions as "triggering an event" in the application. Something happened, and we want the store to know about it. Reducers act like event listeners, and when they hear an action they are interested in, they update the state in response.
 
-### `useDispatch` for function-based Components
+### for function-based Components
+Using `useDispatch()`
 ```jsx
 import { useDispatch } from 'react-redux';
 import { adder } from './actions';
