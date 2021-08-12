@@ -249,7 +249,7 @@ function CustomComponent() {
 }
 ```
 
-### for function-based Components
+### for class-based Components
 1. Create a `mapDispatchToProps` function object
 ```jsx
 import { adder } from './actions';
