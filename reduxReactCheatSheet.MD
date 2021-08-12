@@ -83,8 +83,9 @@ import counter_reducer from './counterReducer.js'; //assuming within same dir
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
-	<keyName>: <reducerName>,
-	counter: counter_reducer,
+	<keyName>: <reducerName>, // syntax
+	counter: counter_reducer, // example 1
+	username: username_reducer // example 2
 	//...
 });
 
@@ -130,7 +131,7 @@ ReactDOM.render(
 ```
 
 ## Using redux `store`
-### within function-based Components
+### For function-based Components
 `Hooks` are used to access the redux `store` object. <br>
 `useSelector` function from `react-redux` is required. Its basic syntax:
 ```jsx
@@ -154,8 +155,42 @@ function CustomComponent() {
 export default CustomComponent;
 ```
 
-### within class-based Components
-TODO
+### For Class-based Components
+`connect` function from `react-redux` is used for accessing redux `store` object within class-based components.
+1. First, 
+```jsx
+import { connect } from 'react-redux';
+// Also import all the `action` functions we need.
+import { <actionName> } from '../actions'; // syntax
+import { userName } from '../actions'; // example 
+```
+2. Create a `mapStateToProps` function object.
+```jsx
+const mapStateToProps = (state) => {
+	return {
+		// syntax
+		<newPropName>: state.<reducerName>,
+		// example
+		usernameAsProp: state.username // as declared in our combined-reducer
+	};
+};
+```
+> `<reducerName>` references to the keyName within our combined-reducer
+
+> `<newPropName>` can be used as `this.props.newPropName` within our connected-component
+3. Display redux `state`
+```jsx
+class CustomComponent extends React.Component {
+	render() {
+		return (
+			{/* syntax */}
+			<h1> { this.props.<newPropName> } </h1>
+			{/* example */}
+			<h1> { this.props.usernameAsProp } </h1>
+		);
+	};
+}
+```
 
 ## `action` objects
 `action` describes what happens within app; it could be events and can trigger updates to `state`.
@@ -197,7 +232,7 @@ store.dispatch({ type: <type> })
 ```
 > You can think of dispatching actions as "triggering an event" in the application. Something happened, and we want the store to know about it. Reducers act like event listeners, and when they hear an action they are interested in, they update the state in response.
 
-### `useDispatch`
+### `useDispatch` for function-based Components
 ```jsx
 import { useDispatch } from 'react-redux';
 import { adder } from './actions';
@@ -213,3 +248,63 @@ function CustomComponent() {
 	);
 }
 ```
+
+### for function-based Components
+1. Create a `mapDispatchToProps` function object
+```jsx
+import { adder } from './actions';
+// ...
+const mapDispatchToProps = () => {
+	return {
+		// syntax
+		<actionName>: actionFunction,
+		// example
+		adder: adder,
+	};
+};
+```
+> `actionFunction` that we imported from `../actions/index.js`
+
+2. Add event to Component
+```jsx
+import { adder } from './actions';
+// ...
+const mapDispatchToProps = () => { ... };
+// ...
+class CustomComponent extends React.Component {
+	render() {
+		return (
+			{/* syntax */}
+			<button 
+				onClick={() => this.props.<actionName>()}> 
+				Press me 
+			</button>
+			{/* example */}
+			<button 
+				onClick={() => this.props.adder(10)}> 
+				Add 10 
+			</button>
+		);
+	}
+}
+```
+3. `connect` mapper functions
+
+From `react-redux.js.org/api/connect` page:
+> The `connect()` function connects a React component to a Redux `store`. <br>
+> It provides its connected component with the pieces of the data it needs from the `store`, and the functions it can use to dispatch actions to the `store`. <br>
+> It does not modify the component class passed to it; instead, it returns a new, connected component class that wraps the component you passed in. <br>
+```jsx
+import { connect } from 'react-redux';
+// ...
+const mapStateToProps = (state) => { ... };
+const mapDispatchToProps = (state) => { ... };
+
+class CustomComponent extends React.Component { ... }
+
+export default connect(
+	mapStateToProps, 
+	mapDispatchToProps()
+	)(CustomComponent); 
+```
+> note: we have to call `connect(...)` function obj by `connect(...)(Component)` 
