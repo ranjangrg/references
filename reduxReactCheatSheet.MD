@@ -10,6 +10,14 @@ npm install --save redux react-redux
 ```
 > `--save` to include 'redux' and 'react-redux' within `dependencies`
 
+For Redux DevTools (chrome extension), add following code to source file e.g. `App.js`
+```jsx
+const global_store = createStore(
+  reducer_object,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+```
+
 ## Basic Directory Tree
 <pre>
 main-app/
