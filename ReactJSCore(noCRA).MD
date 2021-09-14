@@ -2,11 +2,11 @@
 ## 1. Install `nodejs` (includes `npm`)
 ## 2. Install `react` and `react-dom` via `npm`
 ```bash
-npm install react react-dom
+$ npm install react react-dom
 ```
 ## 3. Install `babel` w/ presets (for ES*, JSX -> Vanilla, `babel-loader` for connect to webpack)
 ```bash
-npm install @babel/core @babel/preset-env @babel/preset-react babel-loader
+$ npm install @babel/core @babel/preset-env @babel/preset-react babel-loader
 ```
 > `webpack` for packaging, `babel` for transpiling
 ## 4. Setup `babel`
@@ -21,9 +21,9 @@ Create `.babelrc` file within project root directory.
 ```
 ## 5. Install and configure `webpack`
 ```bash
-npm install webpack webpack-cli webpack-dev-server 
+$ npm install webpack webpack-cli webpack-dev-server 
 # also helpful
-npm install html-webpack-plugin
+$ npm install html-webpack-plugin
 ```
 For webpack configuration:
 ```js
@@ -115,9 +115,9 @@ Some scripts to add to `package.json` for webpack.
 ## 8. Load plugins and loaders
 We need to install CSS (or SASS if needed) loaders via `npm` as well.
 ```bash
-npm install style-loader css-loader
+$ npm install style-loader css-loader
 # for file loaders (public images etc)
-npm install --save-dev file-loader
+$ npm install --save-dev file-loader
 ```
 ```jsx
 // within 'webpack.config.js', module -> rules
@@ -132,11 +132,28 @@ npm install --save-dev file-loader
 // ...
 ```
 
-## 9. batch-script for simplicity
+## 9. Inspect packages/bundles
+Install analyzer plugin for `webpack` i.e. `webpack-bundle-analyzer`
+```bash
+$ npm install --save-dev webpack-bundle-analyzer
+```
+Create webpack stats JSON file
+```bash
+$ npx webpack --json > stats.json
+```
+Use analyzer to parse the stats file
+```bash
+$ npx webpack-bundle-analyzer stats.json
+```
+
+## 10. batch-script for simplicity
 ```bash
 #!/bin/bash
 npm install react react-dom
 npm install @babel/core @babel/preset-env @babel/preset-react babel-loader
 npm install webpack webpack-cli webpack-dev-server 
 npm install html-webpack-plugin
+
+# for analyzer
+npm install --save-dev webpack-bundle-analyzer
 ```
